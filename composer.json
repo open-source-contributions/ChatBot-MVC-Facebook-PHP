@@ -1,0 +1,19 @@
+{
+    "name": "lauan/chatbot",
+    "description": "a chat bot for facebook",
+    "authors": [
+        {
+            "name": "Lauan Borges Guermandi",
+            "email": "lauanguermandi@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Config\\": "Config/",
+            "Controller\\": "Controller/"
+        }
+    }
+}
