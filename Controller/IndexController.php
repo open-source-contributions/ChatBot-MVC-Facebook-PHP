@@ -9,14 +9,18 @@ class IndexController
     }
 
     public function subscribe(){
-        $token = $_GET['hub_verify_token'];
-        $mode = $_GET['hub_mode'];
+        if( $GET ){
+            $token = $_GET['hub_verify_token'];
+            $mode = $_GET['hub_mode'];
 
-        if( $mode == 'subscribe' && $token == VERIFY_TOKEN ){
+            if( $mode == 'subscribe' && $token == VERIFY_TOKEN ){
 
-            echo 'Token Verified!';    
+                echo 'Token Verified!';    
 
-        }
+            }else{
+                echo 'invalid token';
+            }
+        }  
     }
 
     public function messageSender(){
@@ -29,3 +33,4 @@ class IndexController
         echo $obj['entry'][0]['messaging'][0]['message'] . "\n";
     }
 }
+curl -X GET "https://chatbot-mvc.herokuapp.com/webhook?hub.verify_token=0sgdG870SG09GsG7S9GS90PSG990PSVGF&hub.challenge=CHALLENGE_ACCEPTED&hub.mode=subscribe"
