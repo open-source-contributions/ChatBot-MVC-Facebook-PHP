@@ -16,7 +16,8 @@ class Bootstrap
 
     protected function getUrl()
     { 
-        return parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
+        $url = parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
+        return ( is_null( $url ) ? ("/") : $url );
     }
 
     protected function run($url)
