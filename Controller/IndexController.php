@@ -20,6 +20,8 @@ class IndexController
             }else{
                 echo 'invalid token';
             }
+        }else{
+            echo 'GET not found';
         }  
     }
 
