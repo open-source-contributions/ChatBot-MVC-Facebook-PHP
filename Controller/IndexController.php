@@ -5,6 +5,7 @@ namespace Controller;
 class IndexController
 {
     public function index(){
+        echo 'index';
         require __DIR__ . "/../Public/View/home.php";
     }
 

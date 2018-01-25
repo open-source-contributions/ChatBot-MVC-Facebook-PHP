@@ -31,7 +31,6 @@ class Bootstrap
                 $controller->$action();
             }
         });
-        unset( $_GET );
     }
 
     protected function setRoute(array $routes)
