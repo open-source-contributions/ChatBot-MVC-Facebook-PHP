@@ -21,8 +21,9 @@ class Bootstrap
 
     protected function run($url)
     {
+        
         array_walk($this->routes, function ($route) use ($url){
-            if($url == $route['route'])
+            if($url == $route['route'] && $route['method'] == ( count($_GET) > 1 ? 'get' : 'post' ) )
             {
                 $class = "\\Controller\\" . $route['controller'];
                 $controller = new $class;
@@ -30,6 +31,7 @@ class Bootstrap
                 $controller->$action();
             }
         });
+        unset( $_GET );
     }
 
     protected function setRoute(array $routes)

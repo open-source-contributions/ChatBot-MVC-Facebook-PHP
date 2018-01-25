@@ -5,7 +5,7 @@ namespace Controller;
 class IndexController
 {
     public function index(){
-        echo 'index';
+        require __DIR__ . "/../Public/View/home.php";
     }
 
     public function subscribe(){  
@@ -21,7 +21,7 @@ class IndexController
         }   
     }
 
-    public function messageSender(){
+    public function sendMessage(){
         header('Content-Type: application/json; charset=utf-8');
         
         $json = file_get_contents('php://input');
