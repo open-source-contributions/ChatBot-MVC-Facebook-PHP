@@ -8,21 +8,17 @@ class IndexController
         echo 'index';
     }
 
-    public function subscribe(){
-        if( $GET ){
-            $token = $_GET['hub_verify_token'];
-            $mode = $_GET['hub_mode'];
+    public function subscribe(){  
+        $token = $_GET['hub_verify_token'];
+        $mode = $_GET['hub_mode'];
 
-            if( $mode == 'subscribe' && $token == VERIFY_TOKEN ){
+        if( $mode == 'subscribe' && $token == VERIFY_TOKEN ){
 
-                echo 'Token Verified!';    
+            echo 'Token Verified!';    
 
-            }else{
-                echo 'invalid token';
-            }
         }else{
-            echo 'GET not found';
-        }  
+            echo 'invalid token';
+        }   
     }
 
     public function messageSender(){
