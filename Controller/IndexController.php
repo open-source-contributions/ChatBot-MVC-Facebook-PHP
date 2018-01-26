@@ -29,6 +29,9 @@ class IndexController
 
         $obj = json_decode($json, true);
 
-        echo $obj['entry'][0]['messaging'][0]['message'] . "\n";
+        //echo $obj['entry'][0]['messaging'][0]['message'] . "\n";
+
+        var_dump($object); die();
+        
     }
 }
