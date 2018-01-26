@@ -15,7 +15,7 @@ class IndexController
 
         if( $mode == 'subscribe' && $token == VERIFY_TOKEN ){
 
-            echo 'Token Verified!';    
+            echo $_GET['hub_challenge'];
 
         }else{
             echo 'invalid token';
